@@ -26,23 +26,6 @@
     
     [_textTextField addTarget:self action:@selector(checkTextField:) forControlEvents:UIControlEventEditingChanged];
     
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationUserDidTakeScreenshotNotification object:nil queue:mainQueue usingBlock:^(NSNotification * _Nonnull note) {
-        
-        UIAlertController *alerta = [UIAlertController alertControllerWithTitle:@"Atenção!" message:@"Screenshot detectado!" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            [alerta dismissViewControllerAnimated:YES completion:nil];
-        }];
-        
-        [alerta addAction:ok];
-        [self presentViewController:alerta animated:YES completion:nil];
-        
-        }
-    ];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangePowerMode:) name:NSProcessInfoPowerStateDidChangeNotification object:nil];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,15 +33,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)didChangePowerMode:(NSNotification *)notification {
-     if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
-         
-         NSLog(@"Low power mode detected");
-         
-     } else {
-         // low power mode off
-     }
- }
 
 - (void)viewWillDisappear:(BOOL)animated{
     NSLog(@"VIEW WILL DISAPPEAR");
@@ -86,11 +60,11 @@
     [[self view] endEditing:YES];
 }
 
+#pragma mark - Generate GIF
 
 - (void)makeAnimatedGif {
         
     _textoGIF = _textTextField.text;
-    NSLog(@"Testando text: %@", _textoGIF);
     
     NSData* data = [_textoGIF dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     _textoGIF = [[NSString alloc] initWithData: data encoding:NSASCIIStringEncoding];
@@ -125,8 +99,6 @@
         [_listaImagemLetras addObject:_imagem];
     }
 
-
-    NSLog(@"Testando iamgem lestra: %@", _listaImagemLetras);
     
     NSDictionary *fileProperties = @{
                                      (__bridge id)kCGImagePropertyGIFDictionary: @{
@@ -176,6 +148,7 @@
     
 }
 
+#pragma mark - Check TextField
 
 - (void)checkTextField:(id)sender{
     

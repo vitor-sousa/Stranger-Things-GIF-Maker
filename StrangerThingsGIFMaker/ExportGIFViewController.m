@@ -44,17 +44,6 @@
     _photo = nil;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
 
 - (void)requestAuthorizationWithRedirectionToSettings {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -72,7 +61,7 @@
                     //User don't give us permission. Showing alert with redirection to settings
                     //Getting description string from info.plist file
                     NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
-                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão' e autoriza o app o acesso." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão' e autoriza o acesso ao app." preferredStyle:UIAlertControllerStyleAlert];
                     
                     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:nil];
                     [alertController addAction:cancelAction];
