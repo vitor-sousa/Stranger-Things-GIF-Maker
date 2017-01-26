@@ -35,6 +35,9 @@
 
 
 - (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:YES];
+    
     NSLog(@"VIEW WILL DISAPPEAR");
     
     _textoGIF = nil;
@@ -85,7 +88,7 @@
     
     for (NSString *letra in lista_letras){
         
-        NSString* frase = [NSString stringWithFormat:@"letter_%@", letra];
+        NSString* frase = [NSString stringWithFormat:@"letter_%@", letra.uppercaseString];
         
         _imagem = [UIImage imageNamed:frase];
         

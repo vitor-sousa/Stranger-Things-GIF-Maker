@@ -37,6 +37,9 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     
+    [super viewWillDisappear:YES];
+
+    
     NSLog(@"VIEW WILL DISAPPEAR");
     
     _url = nil;
