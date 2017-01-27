@@ -17,29 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
+    
+    float Y_Co = self.view.frame.size.height - loginButton.frame.size.height;
+    [loginButton setFrame:CGRectMake(0.0, Y_Co, loginButton.frame.size.width, loginButton.frame.size.height)];
     [self.view addSubview:loginButton];
  
     
     [_textTextField addTarget:self action:@selector(checkTextField:) forControlEvents:UIControlEventEditingChanged];
     
+    _textTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated{
     
     [super viewWillDisappear:YES];
-    
-    NSLog(@"VIEW WILL DISAPPEAR");
-    
+        
     _textoGIF = nil;
     _listaImagemLetras = nil;
     _imagem = nil;
@@ -176,6 +176,14 @@
         _gerarGIFButtonLabel.hidden = NO;
     }
     
+}
+
+
+#pragma mark - TextField Delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [_textTextField resignFirstResponder];
+    return YES;
 }
 
 @end

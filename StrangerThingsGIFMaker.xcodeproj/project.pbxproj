@@ -7,28 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B3B10241D831DE80089D61F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B10201D831DE80089D61F /* FBSDKCoreKit.framework */; };
-		5B3B10251D831DE80089D61F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B10211D831DE80089D61F /* FBSDKLoginKit.framework */; };
-		5B3B10261D831DE80089D61F /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B10221D831DE80089D61F /* FBSDKMessengerShareKit.framework */; };
-		5B3B10271D831DE80089D61F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B10231D831DE80089D61F /* FBSDKShareKit.framework */; };
-		5B3B10291D8320A60089D61F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B10281D8320A60089D61F /* Bolts.framework */; };
+		09194457B1E5FE7EC3FABA9A /* libPods-StrangerThingsGIFMaker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 485E7FBD2F53BB5151349CC6 /* libPods-StrangerThingsGIFMaker.a */; };
+		5B5C9BB31E3ACE9B00379E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C9BB21E3ACE9B00379E93 /* Assets.xcassets */; };
 		5B87DC2C1D503F5B002B34B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87DC2B1D503F5B002B34B4 /* main.m */; };
 		5B87DC2F1D503F5B002B34B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87DC2E1D503F5B002B34B4 /* AppDelegate.m */; };
 		5B87DC321D503F5B002B34B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87DC311D503F5B002B34B4 /* ViewController.m */; };
 		5B87DC351D503F5B002B34B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B87DC331D503F5B002B34B4 /* Main.storyboard */; };
 		5B87DC3A1D503F5B002B34B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B87DC381D503F5B002B34B4 /* LaunchScreen.storyboard */; };
-		5B87DC421D5040B6002B34B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B87DC411D5040B6002B34B4 /* Assets.xcassets */; };
 		5B9EA97F1D7E6AA1002E82C8 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EA97E1D7E6AA1002E82C8 /* UIImage+animatedGIF.m */; };
 		5B9EA9811D7E6ACC002E82C8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9EA9801D7E6ACC002E82C8 /* ImageIO.framework */; };
 		5BC720201D7BCF9200963CB8 /* ExportGIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC7201F1D7BCF9200963CB8 /* ExportGIFViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B3B10201D831DE80089D61F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		5B3B10211D831DE80089D61F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		5B3B10221D831DE80089D61F /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
-		5B3B10231D831DE80089D61F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		5B3B10281D8320A60089D61F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		207E7C4E7EC31CADAF6DA1FD /* Pods-StrangerThingsGIFMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrangerThingsGIFMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StrangerThingsGIFMaker/Pods-StrangerThingsGIFMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		485E7FBD2F53BB5151349CC6 /* libPods-StrangerThingsGIFMaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StrangerThingsGIFMaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5C9BB21E3ACE9B00379E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B87DC271D503F5B002B34B4 /* StrangerThingsGIFMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrangerThingsGIFMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B87DC2B1D503F5B002B34B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B87DC2D1D503F5B002B34B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,12 +32,12 @@
 		5B87DC341D503F5B002B34B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B87DC391D503F5B002B34B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B87DC3B1D503F5B002B34B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B87DC411D5040B6002B34B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B9EA97D1D7E6AA1002E82C8 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		5B9EA97E1D7E6AA1002E82C8 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		5B9EA9801D7E6ACC002E82C8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		5BC7201E1D7BCF9200963CB8 /* ExportGIFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportGIFViewController.h; sourceTree = "<group>"; };
 		5BC7201F1D7BCF9200963CB8 /* ExportGIFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportGIFViewController.m; sourceTree = "<group>"; };
+		D8CD6391B9B355721F92C718 /* Pods-StrangerThingsGIFMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrangerThingsGIFMaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-StrangerThingsGIFMaker/Pods-StrangerThingsGIFMaker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,23 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3B10261D831DE80089D61F /* FBSDKMessengerShareKit.framework in Frameworks */,
 				5B9EA9811D7E6ACC002E82C8 /* ImageIO.framework in Frameworks */,
-				5B3B10271D831DE80089D61F /* FBSDKShareKit.framework in Frameworks */,
-				5B3B10291D8320A60089D61F /* Bolts.framework in Frameworks */,
-				5B3B10241D831DE80089D61F /* FBSDKCoreKit.framework in Frameworks */,
-				5B3B10251D831DE80089D61F /* FBSDKLoginKit.framework in Frameworks */,
+				09194457B1E5FE7EC3FABA9A /* libPods-StrangerThingsGIFMaker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		309824E929C7FC5963285550 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				207E7C4E7EC31CADAF6DA1FD /* Pods-StrangerThingsGIFMaker.debug.xcconfig */,
+				D8CD6391B9B355721F92C718 /* Pods-StrangerThingsGIFMaker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5B87DC1E1D503F5B002B34B4 = {
 			isa = PBXGroup;
 			children = (
 				5B87DC291D503F5B002B34B4 /* StrangerThingsGIFMaker */,
 				5B87DC281D503F5B002B34B4 /* Products */,
+				309824E929C7FC5963285550 /* Pods */,
+				FE9D82F7C4F3CDF079E25292 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,9 +89,9 @@
 				5B87DC311D503F5B002B34B4 /* ViewController.m */,
 				5BC7201E1D7BCF9200963CB8 /* ExportGIFViewController.h */,
 				5BC7201F1D7BCF9200963CB8 /* ExportGIFViewController.m */,
-				5B87DC411D5040B6002B34B4 /* Assets.xcassets */,
 				5B87DC331D503F5B002B34B4 /* Main.storyboard */,
 				5B87DC381D503F5B002B34B4 /* LaunchScreen.storyboard */,
+				5B5C9BB21E3ACE9B00379E93 /* Assets.xcassets */,
 				5B87DC3B1D503F5B002B34B4 /* Info.plist */,
 				5B87DC2A1D503F5B002B34B4 /* Supporting Files */,
 			);
@@ -100,17 +101,20 @@
 		5B87DC2A1D503F5B002B34B4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5B3B10281D8320A60089D61F /* Bolts.framework */,
-				5B3B10201D831DE80089D61F /* FBSDKCoreKit.framework */,
-				5B3B10211D831DE80089D61F /* FBSDKLoginKit.framework */,
-				5B3B10221D831DE80089D61F /* FBSDKMessengerShareKit.framework */,
-				5B3B10231D831DE80089D61F /* FBSDKShareKit.framework */,
 				5B9EA9801D7E6ACC002E82C8 /* ImageIO.framework */,
 				5B9EA97D1D7E6AA1002E82C8 /* UIImage+animatedGIF.h */,
 				5B9EA97E1D7E6AA1002E82C8 /* UIImage+animatedGIF.m */,
 				5B87DC2B1D503F5B002B34B4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE9D82F7C4F3CDF079E25292 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				485E7FBD2F53BB5151349CC6 /* libPods-StrangerThingsGIFMaker.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B87DC3E1D503F5B002B34B4 /* Build configuration list for PBXNativeTarget "StrangerThingsGIFMaker" */;
 			buildPhases = (
+				AF89C897F0146D5539087EED /* [CP] Check Pods Manifest.lock */,
 				5B87DC231D503F5B002B34B4 /* Sources */,
 				5B87DC241D503F5B002B34B4 /* Frameworks */,
 				5B87DC251D503F5B002B34B4 /* Resources */,
+				32373A9AF708E7E7CFE174B2 /* [CP] Embed Pods Frameworks */,
+				F80FA0638C8E0148DCFC6A0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,12 +179,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B87DC3A1D503F5B002B34B4 /* LaunchScreen.storyboard in Resources */,
-				5B87DC421D5040B6002B34B4 /* Assets.xcassets in Resources */,
+				5B5C9BB31E3ACE9B00379E93 /* Assets.xcassets in Resources */,
 				5B87DC351D503F5B002B34B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32373A9AF708E7E7CFE174B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StrangerThingsGIFMaker/Pods-StrangerThingsGIFMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF89C897F0146D5539087EED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F80FA0638C8E0148DCFC6A0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StrangerThingsGIFMaker/Pods-StrangerThingsGIFMaker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B87DC231D503F5B002B34B4 /* Sources */ = {
@@ -217,7 +272,7 @@
 		5B87DC3C1D503F5B002B34B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -239,7 +294,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -264,7 +319,7 @@
 		5B87DC3D1D503F5B002B34B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -286,7 +341,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -304,6 +359,7 @@
 		};
 		5B87DC3F1D503F5B002B34B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 207E7C4E7EC31CADAF6DA1FD /* Pods-StrangerThingsGIFMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -320,6 +376,7 @@
 		};
 		5B87DC401D503F5B002B34B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8CD6391B9B355721F92C718 /* Pods-StrangerThingsGIFMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

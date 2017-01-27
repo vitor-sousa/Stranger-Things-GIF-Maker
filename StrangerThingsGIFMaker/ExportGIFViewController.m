@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
     _photo = [PHPhotoLibrary sharedPhotoLibrary];
 
@@ -32,16 +31,12 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     
     [super viewWillDisappear:YES];
 
-    
-    NSLog(@"VIEW WILL DISAPPEAR");
-    
     _url = nil;
     _displayGIFImageView = nil;
     _photo = nil;

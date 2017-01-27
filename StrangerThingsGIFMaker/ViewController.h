@@ -14,7 +14,7 @@
 
 @import Photos;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *textTextField;
