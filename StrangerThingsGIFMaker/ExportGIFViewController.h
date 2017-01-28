@@ -19,7 +19,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *displayGIFImageView;
-@property NSURL *url;
+
+@property (strong, nonatomic) NSURL *fileURL;
 
 
 - (IBAction)shareFacebookButton:(id)sender;

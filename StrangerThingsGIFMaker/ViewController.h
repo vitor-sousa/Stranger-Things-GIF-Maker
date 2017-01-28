@@ -17,12 +17,14 @@
 @interface ViewController : UIViewController <UITextFieldDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UITextField *textTextField;
-@property (weak, nonatomic) IBOutlet UILabel *invalidoLabel;
-@property (weak, nonatomic) IBOutlet UIButton *gerarGIFButtonLabel;
+@property (strong, nonatomic) IBOutlet UITextField *textTextField;
+@property (strong, nonatomic) IBOutlet UILabel *invalidoLabel;
+@property (strong, nonatomic) IBOutlet UIButton *gerarGIFButtonLabel;
 
-@property (weak, nonatomic) UIStoryboard *storeboard;
-@property (weak, nonatomic) ExportGIFViewController *exportvc;
+@property (strong, nonatomic) UIStoryboard *storeboard;
+@property (strong, nonatomic) ExportGIFViewController *exportvc;
+
+@property (strong, nonatomic) NSURL *fileURL;
 
 @property NSString *textoGIF;
 @property NSMutableArray* listaImagemLetras;

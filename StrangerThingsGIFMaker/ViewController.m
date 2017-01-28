@@ -18,11 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    
-    float Y_Co = self.view.frame.size.height - loginButton.frame.size.height;
-    [loginButton setFrame:CGRectMake(0.0, Y_Co, loginButton.frame.size.width, loginButton.frame.size.height)];
-    [self.view addSubview:loginButton];
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    
+//    float Y_Co = self.view.frame.size.height - loginButton.frame.size.height;
+//    [loginButton setFrame:CGRectMake(0.0, Y_Co, loginButton.frame.size.width, loginButton.frame.size.height)];
+//    loginButton.center = self.view.center;
+//    [self.view addSubview:loginButton];
  
     
     [_textTextField addTarget:self action:@selector(checkTextField:) forControlEvents:UIControlEventEditingChanged];
@@ -35,44 +36,26 @@
     [super didReceiveMemoryWarning];
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:YES];
-        
-    _textoGIF = nil;
-    _listaImagemLetras = nil;
-    _imagem = nil;
-    _kCGImagePropertyGIFDelayTime = nil;
-    _kCGImagePropertyGIFDictionary = nil;
-    _destination = nil;
-    
-    _textTextField = nil;
-    _invalidoLabel = nil;
-    _gerarGIFButtonLabel = nil;
-    
-}
-
-- (IBAction)generateGIFButton:(id)sender {
-    
-    [self makeAnimatedGif];
-    
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [[self view] endEditing:YES];
 }
 
+
+
 #pragma mark - Generate GIF
 
-- (void)makeAnimatedGif {
-        
+- (IBAction)generateGIFButton:(id)sender {
+    
     _textoGIF = _textTextField.text;
     
     NSData* data = [_textoGIF dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     _textoGIF = [[NSString alloc] initWithData: data encoding:NSASCIIStringEncoding];
     
-
+    
     
     NSMutableArray *lista_letras = [NSMutableArray array];
     for (int i = 0; i < [_textoGIF length]; i++) {
@@ -83,25 +66,22 @@
     
     _listaImagemLetras = [[NSMutableArray alloc] init];
     
-    
     NSUInteger kFrameCount = lista_letras.count + 3;
     
     for (NSString *letra in lista_letras){
         
         NSString* frase = [NSString stringWithFormat:@"letter_%@", letra.uppercaseString];
-        
         _imagem = [UIImage imageNamed:frase];
-        
         [_listaImagemLetras addObject:_imagem];
-
+        
     }
-
+    
     
     for(int i = 0; i <= 2; i ++){
         _imagem = [UIImage imageNamed:@"letter_ "];
         [_listaImagemLetras addObject:_imagem];
     }
-
+    
     
     NSDictionary *fileProperties = @{
                                      (__bridge id)kCGImagePropertyGIFDictionary: @{
@@ -116,40 +96,44 @@
                                       };
     
     NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:nil];
-    NSURL *fileURL = [documentsDirectoryURL URLByAppendingPathComponent:@"stranger_things.gif"];
+    _fileURL = [documentsDirectoryURL URLByAppendingPathComponent:@"stranger_things.gif"];
     
     
-    CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)fileURL, kUTTypeGIF, kFrameCount, NULL);
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)_fileURL, kUTTypeGIF, kFrameCount, NULL);
     CGImageDestinationSetProperties(destination, (__bridge CFDictionaryRef)fileProperties);
     
-
-
+    
+    
     for (UIImage *imagemLetra in _listaImagemLetras) {
         CGImageDestinationAddImage(destination, imagemLetra.CGImage, (__bridge CFDictionaryRef)frameProperties);
     }
     
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setURL:fileURL forKey:@"GIF_URL"];
-    [defaults synchronize];
-    
+
     if (!CGImageDestinationFinalize(destination)) {
         NSLog(@"failed to finalize image destination");
     }
     CFRelease(destination);
-
-    NSLog(@"url=%@", fileURL);
     
-    //[self performSegueWithIdentifier:@"exportGif" sender:nil];
     
-    _storeboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    _exportvc = [_storeboard instantiateViewControllerWithIdentifier:@"ExportGIFVC"];
-        
-    [self presentViewController:_exportvc animated:true completion:nil];
+    [self performSegueWithIdentifier:@"exportGIFVCSegue" sender:nil];
     
 }
+
+
+
+#pragma mark - Navigation 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.destinationViewController isKindOfClass:[ExportGIFViewController class]]){
+        
+        ExportGIFViewController *exportVC = segue.destinationViewController;
+        exportVC.fileURL = _fileURL;
+    }
+    
+}
+
+
 
 #pragma mark - Check TextField
 
@@ -180,6 +164,7 @@
 
 
 #pragma mark - TextField Delegate
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [_textTextField resignFirstResponder];

@@ -19,27 +19,21 @@
     [super viewDidLoad];
 
     _photo = [PHPhotoLibrary sharedPhotoLibrary];
+    
+    _displayGIFImageView.image = [UIImage animatedImageWithAnimatedGIFURL:_fileURL];
 
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    _url = [defaults URLForKey:@"GIF_URL"];
-    
-    _displayGIFImageView.image = [UIImage animatedImageWithAnimatedGIFURL:_url];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:YES];
 
-    _url = nil;
-    _displayGIFImageView = nil;
-    _photo = nil;
+- (void)viewWillAppear:(BOOL)animated {
+    
+    self.navigationController.navigationBar.hidden = NO;
+    self.title = @"Compartilhar";
+    
 }
 
 
@@ -86,11 +80,12 @@
 //Facebook
 - (IBAction)shareFacebookButton:(id)sender {
     
-     NSData* gifData = [NSData dataWithContentsOfURL:_url];
-    
+     NSData* gifData = [NSData dataWithContentsOfURL:_fileURL];
+
     [FBSDKMessengerSharer shareAnimatedGIF:gifData withOptions:nil];
     
 }
+
 
 
 //SaveGIF
@@ -103,7 +98,7 @@
         NSLog(@"Autorizado!");
     
         [_photo performChanges:^{
-            [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:_url];
+            [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:_fileURL];
         } completionHandler:^(BOOL success, NSError * _Nullable error) {
             if(success){
                 UIAlertController *alerta = [UIAlertController alertControllerWithTitle:@"Sucesso!" message:@"GIF salva em Fotos." preferredStyle:UIAlertControllerStyleAlert];
@@ -131,6 +126,7 @@
     
 }
 
+
 //ShareMore
 - (IBAction)shareMoreButton:(id)sender {
     
@@ -138,7 +134,7 @@
     
     //UIImage* image = _displayGIFImageView.image;
     
-    NSData* gif = [NSData dataWithContentsOfURL:_url];
+    NSData* gif = [NSData dataWithContentsOfURL:_fileURL];
     
     NSArray* shareItems = [NSArray arrayWithObjects: message, gif, nil];
     
