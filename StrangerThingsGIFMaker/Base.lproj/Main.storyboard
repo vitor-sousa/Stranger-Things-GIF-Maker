@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,17 +34,6 @@
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD7-JI-wsr">
-                                <rect key="frame" x="96" y="519" width="185" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <size key="titleShadowOffset" width="16" height="0.0"/>
-                                <state key="normal" title="Gerar GIF">
-                                    <color key="titleColor" red="0.84077099119999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="generateGIFButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ko9-yf-dzv"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite o texto que deseja transformar em GIF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTR-7K-BYy">
                                 <rect key="frame" x="23" y="145" width="333" height="128"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
@@ -61,6 +49,18 @@
                                 <color key="textColor" red="0.84077099119999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD7-JI-wsr">
+                                <rect key="frame" x="78" y="529" width="219" height="35"/>
+                                <color key="backgroundColor" red="0.84077099119999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <size key="titleShadowOffset" width="16" height="0.0"/>
+                                <state key="normal" title="GERAR GIF">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateGIFButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eIL-Xn-I03"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,33 +68,34 @@
                             <constraint firstAttribute="trailing" secondItem="d45-wx-cB5" secondAttribute="trailing" id="1AE-OZ-5S8"/>
                             <constraint firstItem="jTR-7K-BYy" firstAttribute="centerX" secondItem="Q6P-bu-w4t" secondAttribute="centerX" id="3NG-af-w48"/>
                             <constraint firstItem="Q6P-bu-w4t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5ir-O3-ckO"/>
-                            <constraint firstItem="pD7-JI-wsr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="7dC-tC-Ol7"/>
                             <constraint firstItem="jTR-7K-BYy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="145" id="7lk-gk-qVS"/>
                             <constraint firstItem="jTR-7K-BYy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="P74-dA-ngD"/>
-                            <constraint firstAttribute="bottom" secondItem="pD7-JI-wsr" secondAttribute="bottom" constant="36" id="Qqi-fQ-KHE"/>
                             <constraint firstItem="Q6P-bu-w4t" firstAttribute="top" secondItem="jTR-7K-BYy" secondAttribute="bottom" constant="14" id="ROi-rb-oAa"/>
+                            <constraint firstItem="pD7-JI-wsr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="62" id="V8K-Ag-RaS"/>
                             <constraint firstItem="Q6P-bu-w4t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="Xsj-Aj-4qZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pD7-JI-wsr" secondAttribute="trailing" constant="62" id="YGg-vN-lKA"/>
                             <constraint firstItem="5aR-0q-uGa" firstAttribute="top" secondItem="Q6P-bu-w4t" secondAttribute="bottom" constant="8" symbolic="YES" id="ZMd-N4-OWn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pD7-JI-wsr" secondAttribute="bottom" constant="39" id="bgN-Ky-2LX"/>
                             <constraint firstItem="d45-wx-cB5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cCf-Qm-M4J"/>
                             <constraint firstItem="d45-wx-cB5" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="kq4-Kb-mkF"/>
+                            <constraint firstItem="pD7-JI-wsr" firstAttribute="centerX" secondItem="d45-wx-cB5" secondAttribute="centerX" id="tdd-2x-oOY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jTR-7K-BYy" secondAttribute="trailing" constant="3" id="uc1-P9-Xb1"/>
                             <constraint firstItem="5aR-0q-uGa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="w1x-c7-87A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pD7-JI-wsr" secondAttribute="trailing" constant="78" id="y5L-h3-heG"/>
                             <constraint firstItem="d45-wx-cB5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-2" id="yt2-A0-9u3"/>
                         </constraints>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="d45-wx-cB5"/>
                                 <include reference="Q6P-bu-w4t"/>
-                                <include reference="pD7-JI-wsr"/>
                                 <include reference="jTR-7K-BYy"/>
                                 <include reference="5aR-0q-uGa"/>
+                                <include reference="pD7-JI-wsr"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6cv-NG-BIT"/>
                     <connections>
-                        <outlet property="gerarGIFButtonLabel" destination="pD7-JI-wsr" id="sjo-BR-fXb"/>
+                        <outlet property="gerarGIFButton" destination="pD7-JI-wsr" id="uVb-hl-06Q"/>
                         <outlet property="invalidoLabel" destination="5aR-0q-uGa" id="d2B-44-1Lq"/>
                         <outlet property="textTextField" destination="Q6P-bu-w4t" id="s5c-pE-vA2"/>
                         <segue destination="xVc-Tl-93e" kind="show" identifier="exportGIFVCSegue" id="UMb-Ah-iaZ"/>
@@ -116,17 +117,11 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroud_sky" translatesAutoresizingMaskIntoConstraints="NO" id="MuC-z7-QTK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroud_starry_sky" translatesAutoresizingMaskIntoConstraints="NO" id="MuC-z7-QTK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SE4-2L-Oly">
-                                <rect key="frame" x="-4" y="162" width="379" height="275"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="275" id="bmo-t3-sek"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-bj-jYk">
-                                <rect key="frame" x="0.0" y="476" width="375" height="111"/>
+                                <rect key="frame" x="0.0" y="419" width="375" height="111"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3l-Cz-EeU">
                                         <rect key="frame" x="158" y="34" width="60" height="60"/>
@@ -169,24 +164,29 @@
                                     <constraint firstItem="hlx-Yg-vCZ" firstAttribute="leading" secondItem="s3l-Cz-EeU" secondAttribute="trailing" constant="68" id="IGt-IP-joS"/>
                                     <constraint firstAttribute="bottom" secondItem="9Lq-9n-1rl" secondAttribute="bottom" constant="20" id="J7g-dk-6hd"/>
                                     <constraint firstItem="9Lq-9n-1rl" firstAttribute="top" secondItem="XGk-bj-jYk" secondAttribute="top" constant="31" id="NHc-bs-eQN"/>
-                                    <constraint firstItem="s3l-Cz-EeU" firstAttribute="firstBaseline" secondItem="hlx-Yg-vCZ" secondAttribute="firstBaseline" id="X0d-i7-3BF"/>
                                     <constraint firstItem="9Lq-9n-1rl" firstAttribute="leading" secondItem="XGk-bj-jYk" secondAttribute="leading" constant="30" id="fhx-GO-IVD"/>
                                     <constraint firstItem="s3l-Cz-EeU" firstAttribute="leading" secondItem="9Lq-9n-1rl" secondAttribute="trailing" constant="68" id="lQH-CB-ZTc"/>
                                     <constraint firstItem="s3l-Cz-EeU" firstAttribute="top" secondItem="XGk-bj-jYk" secondAttribute="top" constant="34" id="vsa-QG-3Up"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SE4-2L-Oly">
+                                <rect key="frame" x="0.0" y="70" width="379" height="292"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="292" id="bmo-t3-sek"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MuC-z7-QTK" firstAttribute="leading" secondItem="XGk-bj-jYk" secondAttribute="leading" id="4Ba-PG-X3y"/>
                             <constraint firstItem="MuC-z7-QTK" firstAttribute="leading" secondItem="5ej-fG-WbL" secondAttribute="leading" id="5UT-6h-8dt"/>
-                            <constraint firstItem="SE4-2L-Oly" firstAttribute="leading" secondItem="5ej-fG-WbL" secondAttribute="leadingMargin" constant="-20" id="7uu-eP-LjW"/>
-                            <constraint firstItem="SE4-2L-Oly" firstAttribute="trailing" secondItem="XGk-bj-jYk" secondAttribute="trailing" id="8qd-0j-hvR"/>
+                            <constraint firstItem="SE4-2L-Oly" firstAttribute="leading" secondItem="5ej-fG-WbL" secondAttribute="leadingMargin" constant="-16" id="7uu-eP-LjW"/>
+                            <constraint firstItem="SE4-2L-Oly" firstAttribute="trailing" secondItem="XGk-bj-jYk" secondAttribute="trailing" constant="4" id="8qd-0j-hvR"/>
                             <constraint firstItem="MuC-z7-QTK" firstAttribute="trailing" secondItem="XGk-bj-jYk" secondAttribute="trailing" id="Akw-nP-ShZ"/>
-                            <constraint firstItem="XGk-bj-jYk" firstAttribute="top" secondItem="SE4-2L-Oly" secondAttribute="bottom" constant="39" id="SAp-H6-dis"/>
-                            <constraint firstItem="M5N-6Y-CTb" firstAttribute="top" secondItem="XGk-bj-jYk" secondAttribute="bottom" constant="16" id="SS0-0U-7EE"/>
+                            <constraint firstItem="XGk-bj-jYk" firstAttribute="top" secondItem="SE4-2L-Oly" secondAttribute="bottom" constant="57" id="SAp-H6-dis"/>
+                            <constraint firstItem="M5N-6Y-CTb" firstAttribute="top" secondItem="XGk-bj-jYk" secondAttribute="bottom" constant="73" id="SS0-0U-7EE"/>
                             <constraint firstItem="MuC-z7-QTK" firstAttribute="bottom" secondItem="M5N-6Y-CTb" secondAttribute="top" id="TiQ-XW-Qk7"/>
-                            <constraint firstItem="SE4-2L-Oly" firstAttribute="top" secondItem="76o-oG-ei4" secondAttribute="bottom" constant="162" id="cKd-5x-DPB"/>
+                            <constraint firstItem="SE4-2L-Oly" firstAttribute="top" secondItem="76o-oG-ei4" secondAttribute="bottom" constant="70" id="cKd-5x-DPB"/>
                             <constraint firstAttribute="trailing" secondItem="MuC-z7-QTK" secondAttribute="trailing" id="imM-0F-NcI"/>
                             <constraint firstItem="MuC-z7-QTK" firstAttribute="top" secondItem="76o-oG-ei4" secondAttribute="bottom" id="trI-Dt-PZ0"/>
                         </constraints>
@@ -210,7 +210,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BRF-qg-aUj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="CUz-Co-KiI">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="CUz-Co-KiI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -226,6 +228,7 @@
     </scenes>
     <resources>
         <image name="backgroud_sky" width="1170" height="2137"/>
+        <image name="backgroud_starry_sky" width="1170" height="1722"/>
         <image name="icon_facebook" width="76" height="80"/>
         <image name="icon_more" width="60" height="60"/>
         <image name="icon_save" width="60" height="60"/>

@@ -38,14 +38,14 @@
 
 
 - (void)requestAuthorizationWithRedirectionToSettings {
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-        if (status == PHAuthorizationStatusAuthorized)
-        {
+        if (status == PHAuthorizationStatusAuthorized) {
             //We have permission. Do whatever is needed
-        }
-        else
-        {
+        
+        }else{
+            
             //No permission. Trying to normally request it
             [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
                 if (status != PHAuthorizationStatusAuthorized)
@@ -53,7 +53,7 @@
                     //User don't give us permission. Showing alert with redirection to settings
                     //Getting description string from info.plist file
                     NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
-                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão' e autoriza o acesso ao app." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão' e autoriza o acesso ao app. E tente novamente." preferredStyle:UIAlertControllerStyleAlert];
                     
                     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:nil];
                     [alertController addAction:cancelAction];
@@ -69,7 +69,10 @@
                 }
             }];
         }
+        
     });
+    
+    
 }
 
 
@@ -92,9 +95,12 @@
 - (IBAction)saveGIFButton:(id)sender {
     
     if([PHPhotoLibrary authorizationStatus] != PHAuthorizationStatusAuthorized){
+        
         NSLog(@"Não autorizado");
         [self requestAuthorizationWithRedirectionToSettings];
+        
     }else{
+        
         NSLog(@"Autorizado!");
     
         [_photo performChanges:^{
@@ -122,7 +128,9 @@
                 [self presentViewController:alerta animated:YES completion:nil];
             }
         }];
+        
     }
+    
     
 }
 

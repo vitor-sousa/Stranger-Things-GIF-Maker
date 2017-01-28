@@ -29,7 +29,8 @@
     [_textTextField addTarget:self action:@selector(checkTextField:) forControlEvents:UIControlEventEditingChanged];
     
     _textTextField.delegate = self;
-    
+    _gerarGIFButton.layer.cornerRadius = 4;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,13 +43,14 @@
 
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [[self view] endEditing:YES];
+    
 }
 
 
 
 #pragma mark - Generate GIF
 
-- (IBAction)generateGIFButton:(id)sender {
+- (IBAction)generateGIFButtonPressed:(id)sender {
     
     _textoGIF = _textTextField.text;
     
@@ -151,13 +153,13 @@
         
         textField.textColor = [UIColor redColor];
         _invalidoLabel.hidden = NO;
-        _gerarGIFButtonLabel.hidden = YES;
+        _gerarGIFButton.hidden = YES;
         
     }else{
         
         textField.textColor = [UIColor blackColor];
         _invalidoLabel.hidden = YES;
-        _gerarGIFButtonLabel.hidden = NO;
+        _gerarGIFButton.hidden = NO;
     }
     
 }

@@ -19,7 +19,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *textTextField;
 @property (strong, nonatomic) IBOutlet UILabel *invalidoLabel;
-@property (strong, nonatomic) IBOutlet UIButton *gerarGIFButtonLabel;
+@property (strong, nonatomic) IBOutlet UIButton *gerarGIFButton;
 
 @property (strong, nonatomic) UIStoryboard *storeboard;
 @property (strong, nonatomic) ExportGIFViewController *exportvc;
@@ -36,7 +36,7 @@
 @property CGImageDestinationRef destination;
 
 
-- (IBAction)generateGIFButton:(id)sender;
+- (IBAction)generateGIFButtonPressed:(id)sender;
 
 @end
 
