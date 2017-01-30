@@ -44,7 +44,9 @@
 - (void)requestAuthorizationWithRedirectionToSettings {
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        
         if (status == PHAuthorizationStatusAuthorized) {
             //We have permission. Do whatever is needed
         
@@ -56,6 +58,7 @@
                 {
                     //User don't give us permission. Showing alert with redirection to settings
                     //Getting description string from info.plist file
+                    
                     NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
                     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão', autoriza o acesso ao app e tente novamente." preferredStyle:UIAlertControllerStyleAlert];
                     
@@ -110,31 +113,66 @@
         
         NSLog(@"Autorizado!");
     
-        [_photo performChanges:^{
-            [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:_fileURL];
-        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-            if(success){
-                UIAlertController *alerta = [UIAlertController alertControllerWithTitle:@"Sucesso!" message:@"GIF salva em Fotos." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *pending = [UIAlertController alertControllerWithTitle:nil
+                                                                         message:@"Por favor, aguarde...\n\n"
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+        UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        indicator.color = [UIColor blackColor];
+        indicator.translatesAutoresizingMaskIntoConstraints=NO;
+        [pending.view addSubview:indicator];
+        NSDictionary * views = @{@"pending" : pending.view, @"indicator" : indicator};
+        
+        NSArray * constraintsVertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[indicator]-(20)-|" options:0 metrics:nil views:views];
+        NSArray * constraintsHorizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[indicator]|" options:0 metrics:nil views:views];
+        NSArray * constraints = [constraintsVertical arrayByAddingObjectsFromArray:constraintsHorizontal];
+        [pending.view addConstraints:constraints];
+        [indicator setUserInteractionEnabled:NO];
+        [indicator startAnimating];
+        
+        [self presentViewController:pending animated:YES completion:nil];
+        
+        
+        
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            [_photo performChanges:^{
+                [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:_fileURL];
+            } completionHandler:^(BOOL success, NSError * _Nullable error) {
+                
+                if(success){
+                    
+                    UIAlertController *alerta = [UIAlertController alertControllerWithTitle:@"Sucesso!" message:@"Salvo com sucesso." preferredStyle:UIAlertControllerStyleAlert];
 
-                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    [alerta dismissViewControllerAnimated:YES completion:nil];
-                }];
+                    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [alerta dismissViewControllerAnimated:YES completion:nil];
+                    }];
 
-                [alerta addAction:ok];
-                [self presentViewController:alerta animated:YES completion:nil];
+                    [alerta addAction:ok];
+                    
+                    [self dismissViewControllerAnimated:YES completion:nil];
+
+                    
+                    [self presentViewController:alerta animated:YES completion:nil];
 
 
-            }else{
-                UIAlertController *alerta = [UIAlertController alertControllerWithTitle:@"Erro!" message:@"Erro. Tente novamente, por favor!" preferredStyle:UIAlertControllerStyleAlert];
+                }else{
+                    
+                    UIAlertController *alerta = [UIAlertController alertControllerWithTitle:@"Erro!" message:@"Erro. Tente novamente, por favor!" preferredStyle:UIAlertControllerStyleAlert];
 
-                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                    [alerta dismissViewControllerAnimated:YES completion:nil];
-                }];
+                    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                        [alerta dismissViewControllerAnimated:YES completion:nil];
+                    }];
 
-                [alerta addAction:ok];
-                [self presentViewController:alerta animated:YES completion:nil];
-            }
-        }];
+                    [alerta addAction:ok];
+                    
+                    [self presentViewController:alerta animated:YES completion:nil];
+                
+                }
+                
+            }];
+            
+        });
+        
         
     }
     

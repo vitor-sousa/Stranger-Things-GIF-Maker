@@ -30,7 +30,7 @@
     
     _textTextField.delegate = self;
     _gerarGIFButton.layer.cornerRadius = 4;
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
