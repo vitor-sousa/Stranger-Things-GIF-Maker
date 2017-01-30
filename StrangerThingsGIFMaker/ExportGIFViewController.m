@@ -39,6 +39,7 @@
 
 
 
+
 #pragma mark - Request Authorization Method
 
 - (void)requestAuthorizationWithRedirectionToSettings {
