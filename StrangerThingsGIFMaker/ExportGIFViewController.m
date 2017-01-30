@@ -68,10 +68,9 @@
                     UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Mudar Permissão" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
                     }];
+                    
                     [alertController addAction:settingsAction];
-                    
-//                    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
-                    
+
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }];
@@ -120,11 +119,13 @@
         indicator.color = [UIColor blackColor];
         indicator.translatesAutoresizingMaskIntoConstraints=NO;
         [pending.view addSubview:indicator];
+        
         NSDictionary * views = @{@"pending" : pending.view, @"indicator" : indicator};
         
         NSArray * constraintsVertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[indicator]-(20)-|" options:0 metrics:nil views:views];
         NSArray * constraintsHorizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[indicator]|" options:0 metrics:nil views:views];
         NSArray * constraints = [constraintsVertical arrayByAddingObjectsFromArray:constraintsHorizontal];
+        
         [pending.view addConstraints:constraints];
         [indicator setUserInteractionEnabled:NO];
         [indicator startAnimating];
@@ -185,9 +186,6 @@
 - (IBAction)shareMoreButton:(id)sender {
     
     NSString* message = @"Stranger Things GIF Maker";
-    
-    //UIImage* image = _displayGIFImageView.image;
-    
     NSData* gif = [NSData dataWithContentsOfURL:_fileURL];
     
     NSArray* shareItems = [NSArray arrayWithObjects: message, gif, nil];
