@@ -16,7 +16,6 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
 
-
 @property (strong, nonatomic) IBOutlet UITextField *textTextField;
 @property (strong, nonatomic) IBOutlet UILabel *invalidoLabel;
 @property (strong, nonatomic) IBOutlet UIButton *gerarGIFButton;
@@ -25,7 +24,6 @@
 @property (strong, nonatomic) ExportGIFViewController *exportvc;
 
 @property (strong, nonatomic) NSURL *fileURL;
-
 @property NSString *textoGIF;
 @property NSMutableArray* listaImagemLetras;
 @property UIImage* imagem;

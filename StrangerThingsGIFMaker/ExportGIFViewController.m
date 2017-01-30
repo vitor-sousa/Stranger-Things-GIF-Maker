@@ -21,7 +21,7 @@
     _photo = [PHPhotoLibrary sharedPhotoLibrary];
     
     _displayGIFImageView.image = [UIImage animatedImageWithAnimatedGIFURL:_fileURL];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,11 +31,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.988 green:0.165 blue:0.110 alpha:1.00];
     self.navigationController.navigationBar.hidden = NO;
     self.title = @"Compartilhar";
     
 }
 
+
+
+#pragma mark - Request Authorization Method
 
 - (void)requestAuthorizationWithRedirectionToSettings {
     
@@ -53,7 +57,7 @@
                     //User don't give us permission. Showing alert with redirection to settings
                     //Getting description string from info.plist file
                     NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
-                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão' e autoriza o acesso ao app. E tente novamente." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"Para nos dar permissão aperte o botão 'Mudar Permissão', autoriza o acesso ao app e tente novamente." preferredStyle:UIAlertControllerStyleAlert];
                     
                     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:nil];
                     [alertController addAction:cancelAction];
@@ -78,6 +82,8 @@
 
 
 
+
+
 #pragma mark - Share Buttons
 
 //Facebook
@@ -88,6 +94,7 @@
     [FBSDKMessengerSharer shareAnimatedGIF:gifData withOptions:nil];
     
 }
+
 
 
 
@@ -135,6 +142,7 @@
 }
 
 
+
 //ShareMore
 - (IBAction)shareMoreButton:(id)sender {
     
@@ -151,4 +159,5 @@
     
     [self presentViewController:avc animated:YES completion:nil];
 }
+
 @end

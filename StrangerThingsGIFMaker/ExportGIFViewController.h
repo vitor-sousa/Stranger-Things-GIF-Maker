@@ -14,13 +14,10 @@
 
 @interface ExportGIFViewController : UIViewController
 
-
-@property PHPhotoLibrary *photo;
-
-
-@property (weak, nonatomic) IBOutlet UIImageView *displayGIFImageView;
-
+@property (strong, nonatomic) IBOutlet UIView *buttonsView;
+@property (strong, nonatomic) IBOutlet UIImageView *displayGIFImageView;
 @property (strong, nonatomic) NSURL *fileURL;
+@property PHPhotoLibrary *photo;
 
 
 - (IBAction)shareFacebookButton:(id)sender;

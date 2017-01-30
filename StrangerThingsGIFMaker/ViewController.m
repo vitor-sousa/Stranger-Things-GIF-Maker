@@ -48,7 +48,10 @@
 
 
 
-#pragma mark - Generate GIF
+
+
+
+#pragma mark - Generate GIF Method
 
 - (IBAction)generateGIFButtonPressed:(id)sender {
     
@@ -71,11 +74,9 @@
     NSUInteger kFrameCount = lista_letras.count + 3;
     
     for (NSString *letra in lista_letras){
-        
         NSString* frase = [NSString stringWithFormat:@"letter_%@", letra.uppercaseString];
         _imagem = [UIImage imageNamed:frase];
         [_listaImagemLetras addObject:_imagem];
-        
     }
     
     
@@ -114,12 +115,15 @@
     if (!CGImageDestinationFinalize(destination)) {
         NSLog(@"failed to finalize image destination");
     }
-    CFRelease(destination);
     
+    
+    CFRelease(destination);
     
     [self performSegueWithIdentifier:@"exportGIFVCSegue" sender:nil];
     
 }
+
+
 
 
 
@@ -131,9 +135,12 @@
         
         ExportGIFViewController *exportVC = segue.destinationViewController;
         exportVC.fileURL = _fileURL;
+        
     }
     
 }
+
+
 
 
 
@@ -160,9 +167,13 @@
         textField.textColor = [UIColor blackColor];
         _invalidoLabel.hidden = YES;
         _gerarGIFButton.hidden = NO;
+        
     }
     
+    
 }
+
+
 
 
 #pragma mark - TextField Delegate
