@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ImageIO/ImageIO.h"
-#import <MobileCoreServices/MobileCoreServices.h>
 #import "ExportGIFViewController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "GIFGenerator.h"
 
-@import Photos;
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) NSURL *fileURL;
 
 @property (strong, nonatomic) IBOutlet UITextField *textTextField;
 @property (strong, nonatomic) IBOutlet UILabel *invalidoLabel;
@@ -23,15 +23,7 @@
 @property (strong, nonatomic) UIStoryboard *storeboard;
 @property (strong, nonatomic) ExportGIFViewController *exportvc;
 
-@property (strong, nonatomic) NSURL *fileURL;
-@property NSString *textoGIF;
-@property NSMutableArray* listaImagemLetras;
-@property UIImage* imagem;
-
-@property NSString *kCGImagePropertyGIFDelayTime;
-@property NSString *kCGImagePropertyGIFDictionary;
-
-@property CGImageDestinationRef destination;
+@property (strong, nonatomic) GIFGenerator *gifGenerator;
 
 
 - (IBAction)generateGIFButtonPressed:(id)sender;
